@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="" id="staty">
+            <img class="ikonka" v-bind:src="ihp">
+        </div>
+        <div class="formatka" id="postac">
+            <h1>Wybierz Postać</h1>
+                <div class="przycisk" @click="wyborPostac=1">Wojownik</div>
+                <div class="przycisk" @click="wyborPostac=2">Mag</div>
+                <div class="przycisk" @click="wyborPostac=3">Bandyta</div>
+                <div class="przycisk" @click="wyborPostac=2">Palladyn</div>
+        </div>
+        <div class="formatka" id="main">
+            <h1>Co robisz</h1>
+                <div class="przycisk" @click="wybor=1">Wyprawa</div>
+                <div class="przycisk" @click="wybor=2">Sklep</div>
+        </div>
+        
+    
+    <div v-if="wybor == 1">
+        <div class="formatka" id="spotkanieN">
+            <h1>Spotykasz Potwora</h1>
+            <div class="przycisk" @click="spotkanieN=1">Atakuj</div>
+            <div class="przycisk" @click="spotkanieN=2">Zaklęcia</div>
+            <div class="przycisk" @click="spotkanieN=3">Ucieczka</div>
+        </div>
+    </div>
+
+    <div class="formatka" id="sklep" v-if="wybor == 2">
+        <h1>Sklep</h1>
+            <div class="przycisk" @click="sklepWybor=1">Miecz --> 15</div>
+            <div class="przycisk" @click="sklepWybor=2">Spa --> 20</div>
+            <div class="przycisk" @click="sklepWybor=3">Heal --> 10</div>
+    </div>
+
+
+
+
+    </div>
+
+    <script src="./xx.js"></script>
+
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+
+</body>
+
+</html>
