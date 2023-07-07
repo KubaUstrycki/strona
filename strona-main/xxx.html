@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        
+        <div class="formatka" id="staty">
+            <img class="ikonka" v-bind:src="ihp">
+            <span class="txt">{{postac.hp}}</span>
+            <img class="ikonka" v-bind:src="iat">
+            <span class="txt">{{postac.attack}}</span>
+            <img class="ikonka" v-bind:src="ima">
+            <span class="txt">{{postac.mana}}</span>
+            <img class="ikonka" v-bind:src="igo">
+            <span class="txt">{{postac.gold}}</span>    
+        </div>
+
+        <div v-if="postac.hp==0" class="formatka" id="postac">
+            <h1>Wybierz Postać</h1>
+            <div class="przycisk" @click="zmianapostaci(1)">Wojownik</div>
+            <div class="przycisk" @click="zmianapostaci(2)">Mag</div>
+            <div class="przycisk" @click="zmianapostaci(3)">Bandyta</div>
+            <div class="przycisk" @click="zmianapostaci(4)">Palladyn</div>
+        </div>
+        <div v-if="postac.hp>0" class="formatka" id="main">
+            <h1>Co robisz</h1>
+            <div class="przycisk" @click="wybor=1">Wyprawa</div>
+            <div class="przycisk" @click="wybor=2">Sklep</div>
+        </div>
+
+        <div v-if="wybor == 1">
+            <div class="formatka" id="spotkanieN">
+                <h1>Spotykasz Potwora</h1>
+                <div class="przycisk" @click="spotkanieN=1">Atakuj</div>
+                <div class="przycisk" @click="spotkanieN=2">Zaklęcia</div>
+                <div class="przycisk" @click="spotkanieN=3">Ucieczka</div>
+            </div>
+        </div>
+
+        <div class="formatka" id="sklep" v-if="wybor == 2">
+            <h1>Sklep</h1>
+            <div class="przycisk" @click="sklep(1)">Miecz --> 15</div>
+            <div class="przycisk" @click="sklep(2)">Spa --> 25</div>
+            <div class="przycisk" @click="sklep(3)">Heal --> 10</div>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="./xx.js"></script>
+
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+
+</body>
+
+</html>
